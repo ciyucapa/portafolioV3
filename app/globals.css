@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+/* =========================================
+   🌌 ROOT VARIABLES
+========================================= */
+
+:root {
+
+  /* 🎨 BACKGROUNDS */
+  --background: #07070B;
+  --background-secondary: #0F0F17;
+  --background-card: rgba(15, 15, 23, 0.75);
+
+  /* ✨ TEXT */
+  --foreground: #F5F5F7;
+  --text-secondary: #A1A1AA;
+
+  /* 💜 PRIMARY COLORS */
+  --primary: #8B5CF6;
+  --secondary: #EC4899;
+  --accent: #38BDF8;
+
+  /* 🌫️ BORDERS */
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* ✨ GLOW */
+  --glow-primary: rgba(139, 92, 246, 0.45);
+  --glow-secondary: rgba(236, 72, 153, 0.35);
+}
+
+/* =========================================
+   🌌 RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   🌌 BODY
+========================================= */
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+/* =========================================
+   ✨ BACKGROUND GLOW
+========================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(139, 92, 246, 0.18),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at bottom left,
+      rgba(56, 189, 248, 0.12),
+      transparent 30%
+    );
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* =========================================
+   ✨ NOISE OVERLAY
+========================================= */
+
+.noise {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.03;
+
+  background-image:
+    url("https://grainy-gradients.vercel.app/noise.svg");
+
+  z-index: 999;
+}
+
+/* =========================================
+   🌫️ GLASS EFFECT
+========================================= */
+
+.glass::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  padding: 1px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.12),
+      transparent,
+      rgba(139,92,246,0.15)
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  pointer-events: none;
+  max-width:1400px;
+  margin: 0 auto
+}
+
+/* =========================================
+   💜 BUTTON
+========================================= */
+
+.primary-button {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  box-shadow:
+    0 0 25px var(--glow-primary);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0px 20px
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 35px var(--glow-primary);
+}
+
+/* =========================================
+   ✨ NAV LINKS
+========================================= */
+
+.nav-link {
+  color: var(--text-secondary);
+  transition: 0.3s ease;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: var(--foreground);
+}
+
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 100%;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: var(--primary);
+
+  box-shadow:
+    0 0 12px var(--glow-primary);
+}
+
+/* =========================================
+   ✨ SECTION TITLES
+========================================= */
+
+.section-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.section-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================
+   ✨ CARD HOVER
+========================================= */
+
+.card-hover {
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(139,92,246,0.25);
+
+  box-shadow:
+    0 0 35px rgba(139,92,246,0.12);
+}
+
+/* =========================================
+   ✨ FLOAT ANIMATION
+========================================= */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* =========================================
+   ✨ SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    var(--primary),
+    var(--secondary)
+  );
+
+  border-radius: 999px;
+}
+
+/* =========================================
+   ✨ TEXT SELECTION
+========================================= */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
