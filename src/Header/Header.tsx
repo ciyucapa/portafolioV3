@@ -20,11 +20,13 @@ export default function Header() {
           z-50
           flex
           justify-center
+          marginMobile
         "
       >
         <div
           className="
             glass
+            borderMobile
 
             w-full
             max-w-6xl
@@ -89,23 +91,23 @@ export default function Header() {
           ========================================= */}
           <nav className="hidden md:flex items-center gap-10">
             <Link href="/" className="nav-link active">
-              01. Inicio
+              Inicio
             </Link>
 
             <Link href="/sobre-mi" className="nav-link">
-              02. Sobre mí
+              Sobre mí
             </Link>
 
             <Link href="/proyectos" className="nav-link">
-              03. Proyectos
+              Proyectos
             </Link>
 
             <Link href="/stack" className="nav-link">
-              04. Stack
+              Stack
             </Link>
 
             <Link href="/contacto" className="nav-link">
-              05. Contacto
+              Contacto
             </Link>
           </nav>
 
@@ -113,32 +115,32 @@ export default function Header() {
               💜 BUTTON
           ========================================= */}
           <div className="hidden md:flex">
-            <button
+            <button style={{padding: 10}}
               className="
                 group
-                relative
-                overflow-hidden
+    relative
 
-                rounded-full
+    inline-flex
+    items-center
+    justify-center
 
-                px-8
-                py-4
+    rounded-full
 
-                text-white
-                font-semibold
-                tracking-wide
+    text-white
+    font-semibold
+    tracking-wide
 
-                transition-all
-                duration-500
+    transition-all
+    duration-500
 
-                bg-gradient-to-r
-                from-[var(--primary)]
-                to-[var(--secondary)]
+    bg-gradient-to-r
+    from-[var(--primary)]
+    to-[var(--secondary)]
 
-                shadow-[0_0_30px_rgba(139,92,246,0.35)]
+    shadow-[0_0_30px_rgba(139,92,246,0.35)]
 
-                hover:scale-[1.03]
-                hover:shadow-[0_0_45px_rgba(139,92,246,0.55)]
+    hover:scale-[1.03]
+    hover:shadow-[0_0_45px_rgba(139,92,246,0.55)]
               "
             >
               {/* Glow Layer */}
@@ -165,10 +167,12 @@ export default function Header() {
 
                   flex
                   items-center
-                  gap-2
+                  gap-3
+
+    whitespace-nowrap
                 "
               >
-                Hablemos
+                Hablemos 
 
                 <span
                   className="
@@ -277,7 +281,7 @@ export default function Header() {
               transition
             "
           >
-            01. Inicio
+            Inicio
           </Link>
 
           <Link
@@ -295,7 +299,7 @@ export default function Header() {
               transition
             "
           >
-            02. Sobre mí
+            Sobre mí
           </Link>
 
           <Link
@@ -313,7 +317,7 @@ export default function Header() {
               transition
             "
           >
-            03. Proyectos
+            Proyectos
           </Link>
 
           <Link
@@ -331,7 +335,7 @@ export default function Header() {
               transition
             "
           >
-            04. Stack
+            Stack
           </Link>
 
           <Link
@@ -349,7 +353,7 @@ export default function Header() {
               transition
             "
           >
-            05. Contacto
+            Contacto
           </Link>
 
           {/* =========================================

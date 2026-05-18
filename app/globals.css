@@ -297,3 +297,19 @@ body::before {
   background: var(--primary);
   color: white;
 }
+
+.padding {
+  padding: 10px !important
+}
+
+
+@media (max-width: 768px) {
+  .marginMobile {
+   margin: 0 20px;
+  }
+
+  .borderMobile {
+   border-radius: 50px;
+   padding: 0 20px;
+  }
+}
