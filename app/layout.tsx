@@ -3,34 +3,27 @@ import "./globals.css";
 
 export const metadata: Metadata = {
 
+metadataBase:
+
+new URL(
+"https://cindycaceres-dev.vercel.app"
+),
+
 title:
 "Cindy Cáceres | Frontend Developer",
 
 description:
-"Frontend Developer especializada en React, Next.js, TypeScript, VTEX y desarrollo de experiencias web modernas.",
+"Frontend Developer especializada en React, Next.js, TypeScript y desarrollo web moderno.",
 
 keywords:[
+
 "React",
 "Next.js",
 "Frontend Developer",
 "TypeScript",
-"VTEX",
-"React Native",
-"Node.js",
-"Firebase",
-"Prisma"
-],
-
-authors:[
-
-{
-name:"Cindy Cáceres"
-}
+"VTEX"
 
 ],
-
-creator:
-"Cindy Cáceres",
 
 openGraph:{
 
@@ -38,11 +31,11 @@ title:
 "Cindy Cáceres Portfolio",
 
 description:
-"Frontend Developer React • Next.js • TypeScript",
+"Frontend Developer React • Next.js",
 
 images:[
 
-"/profile.png"
+"/metadapicture.png"
 
 ],
 
@@ -54,10 +47,16 @@ locale:
 
 },
 
-icons:{
+twitter:{
 
-icon:
-"/favicon.ico"
+card:
+"summary_large_image",
+
+images:[
+
+"/metadapicture.png"
+
+]
 
 }
 
@@ -65,20 +64,18 @@ icon:
 
 export default function RootLayout({
 
-children,
+children
 
-}:Readonly<{
+}:{
 
 children:
-React.ReactNode;
+React.ReactNode
 
-}>){
+}){
 
 return(
 
-<html
-lang="es"
->
+<html lang="es">
 
 <body>
 
