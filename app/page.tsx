@@ -1,5 +1,10 @@
 import Hero from "@/src/components/Hero";
 import Header from "../src/components/Header/Header";
+import Stack from "@/src/components/Stack";
+import Projects from "@/src/components/Projects";
+import About from "@/src/components/About";
+import Contact from "@/src/components/Contact";
+import Footer from "@/src/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +21,16 @@ export default function Home() {
       <Header />
 
       <Hero />
+
+      <Stack/>
+
+      <Projects/>
+
+      <About/>
+
+      <Contact/>     
+
+      <Footer/>
 
     </div>
   );

@@ -15,7 +15,9 @@ export default function Header() {
 
     const handleScroll = () => {
 
-      setScrolled(window.scrollY > 40);
+      setScrolled(
+        window.scrollY > 40
+      );
 
     };
 
@@ -35,17 +37,47 @@ export default function Header() {
 
   }, []);
 
+  function scrollToSection(
+    sectionId:string
+  ){
+
+    document
+      .getElementById(
+        sectionId
+      )
+      ?.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+      });
+
+    setOpen(false);
+
+  }
+
   return (
 
     <>
 
       <header
-        className={`header ${
-          scrolled ? "header-scroll" : ""
-        }`}
+        className={`
+          header
+
+          ${
+            scrolled
+            ? "header-scroll"
+            : ""
+          }
+        `}
       >
 
-        <div className="header-container">
+        <div
+          className="
+          header-container
+          "
+        >
 
           {/* LOGO */}
 
@@ -56,7 +88,11 @@ export default function Header() {
 
             CINDY
 
-            <span>.</span>
+            <span>
+
+              .
+
+            </span>
 
             DEV_
 
@@ -64,34 +100,85 @@ export default function Header() {
 
           {/* DESKTOP */}
 
-          <nav className="desktop-nav">
+          <nav
+            className="
+            desktop-nav
+            "
+          >
 
-            <Link href="/">
+            <button
+              onClick={() =>
+                scrollToSection(
+                  "hero"
+                )
+              }
+            >
+
               Inicio
-            </Link>
 
-            <Link href="/sobre-mi">
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection(
+                  "about"
+                )
+              }
+            >
+
               Sobre mí
-            </Link>
 
-            <Link href="/proyectos">
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection(
+                  "projects"
+                )
+              }
+            >
+
               Proyectos
-            </Link>
 
-            <Link href="/stack">
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection(
+                  "stack"
+                )
+              }
+            >
+
               Stack
-            </Link>
 
-            <Link href="/contacto">
+            </button>
+
+            <button
+              onClick={() =>
+                scrollToSection(
+                  "contact"
+                )
+              }
+            >
+
               Contacto
-            </Link>
+
+            </button>
 
           </nav>
 
           {/* BOTON */}
 
           <button
-            className="desktop-button"
+            className="
+            desktop-button
+            "
+            onClick={() =>
+              scrollToSection(
+                "contact"
+              )
+            }
           >
 
             Hablemos ✨
@@ -105,7 +192,9 @@ export default function Header() {
             mobile-toggle
             "
             onClick={() =>
-              setOpen(!open)
+              setOpen(
+                !open
+              )
             }
           >
 
@@ -129,35 +218,75 @@ export default function Header() {
 
       <div
         className={`
-        mobile-menu
+          mobile-menu
 
-        ${
-          open
-          ? "mobile-open"
-          : ""
-        }
+          ${
+            open
+            ? "mobile-open"
+            : ""
+          }
         `}
       >
 
-        <Link href="/">
+        <button
+          onClick={() =>
+            scrollToSection(
+              "hero"
+            )
+          }
+        >
+
           Inicio
-        </Link>
 
-        <Link href="/sobre-mi">
+        </button>
+
+        <button
+          onClick={() =>
+            scrollToSection(
+              "about"
+            )
+          }
+        >
+
           Sobre mí
-        </Link>
 
-        <Link href="/proyectos">
+        </button>
+
+        <button
+          onClick={() =>
+            scrollToSection(
+              "projects"
+            )
+          }
+        >
+
           Proyectos
-        </Link>
 
-        <Link href="/stack">
+        </button>
+
+        <button
+          onClick={() =>
+            scrollToSection(
+              "stack"
+            )
+          }
+        >
+
           Stack
-        </Link>
 
-        <Link href="/contacto">
+        </button>
+
+        <button
+          onClick={() =>
+            scrollToSection(
+              "contact"
+            )
+          }
+        >
+
           Contacto
-        </Link>
+
+        </button>
 
       </div>
 
